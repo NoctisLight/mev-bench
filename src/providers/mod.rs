@@ -1,3 +1,6 @@
+pub mod endpoints;
+pub mod providers;
+
 pub enum Region{
     UsEast,
     UsWest,
@@ -5,26 +8,26 @@ pub enum Region{
     EuCentral,
     AsiaTokyo,
     AsiaSingapore
-};
+}
 
 pub enum AuthMethod {
     QueryParam { key: String, value: String},
-    Header { key: String, value: String},
+    Header { key: String, value: String}, //Maybe not useful but lets keep it here
     UrlPath { api_key: String},
     None,
 }
 
 pub struct Endpoint {
-    pub url: String,
+    pub url: &'static str,
     pub region: Region,
-    pub label: String,
+    pub label: &'static str,
+    pub rpc_method: &'static str
 }
 
-pub trait Provider {
-    fn name(&self) -> &str;
-    fn endpoints(&self) -> &[Endpoint];
-    fn auth(&self) -> AuthMethod;
-    fn min_tip_lamports(&self) -> u64; //Note !!!!! : Lists Axiom and Padre fees management.
-    fn supports_bundles(&self) -> bool;
-    fn rpc_method(&self) -> &str;
+pub struct ProviderConfig{
+    pub name: &'static str,
+    pub endpoints: &'static [Endpoint],
+    pub auth: AuthMethod,
+    pub min_tip_lamports: u64, // Algorithm still to be made later 
+    pub supports_bundles: bool
 }
