@@ -1,4 +1,5 @@
 use clap::Parser;
+mod providers;
 
 #[derive(Parser, Debug)]
 struct Cli {

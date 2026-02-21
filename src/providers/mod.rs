@@ -19,3 +19,12 @@ pub struct Endpoint {
     pub region: Region,
     pub label: String,
 }
+
+pub trait Provider {
+    fn name(&self) -> &str;
+    fn endpoints(&self) -> &[Endpoint];
+    fn auth(&self) -> AuthMethod;
+    fn min_tip_lamports(&self) -> u64; //Note !!!!! : Lists Axiom and Padre fees management.
+    fn supports_bundles(&self) -> bool;
+    fn rpc_method(&self) -> &str;
+}
