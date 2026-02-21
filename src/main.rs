@@ -1,3 +1,22 @@
+use clap::Parser;
+
+#[derive(Parser, Debug)]
+struct Cli {
+    #[arg(long)]
+    provider: Option<String>,
+    #[arg(long)]
+    test: Option<String>,
+    #[arg(long, default_value="5")]
+    rounds: usize,
+    #[arg(long)]
+    full: bool,
+    #[arg(long)]
+    json: bool,
+ }
+
+
+
 fn main() {
-    println!("Hello, world!");
+    let cli = Cli::parse();
+    println!("Selected : {:?}", cli);
 }
