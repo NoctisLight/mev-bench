@@ -2,6 +2,7 @@ pub mod endpoints;
 pub mod providers;
 
 pub enum Region{
+    Global,
     UsEast,
     UsWest,
     EuWest,

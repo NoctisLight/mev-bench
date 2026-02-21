@@ -3,6 +3,8 @@ use super::endpoints::{
 };
 use super::{AuthMethod, ProviderConfig};
 
+
+///NOTE !!! : Check min tip, Auth methods et bundles supports
 pub fn all_providers() -> Vec<ProviderConfig> {
     vec![
         ProviderConfig {
@@ -43,8 +45,8 @@ pub fn all_providers() -> Vec<ProviderConfig> {
         ProviderConfig {
             name: "Helius",
             endpoints: HELIUS_ENDPOINTS,
-            auth: AuthMethod::Header { key: "api-key".to_string(), value: String::new() },
-            min_tip_lamports: 1_000_000,
+            auth: AuthMethod::None,
+            min_tip_lamports: 200_000, // Checked
             supports_bundles: false,
         },
         ProviderConfig {

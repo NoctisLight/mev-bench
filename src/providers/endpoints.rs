@@ -128,7 +128,14 @@ pub const STELLIUM_ENDPOINTS: &[Endpoint] = &[
 
 /// NOTE !!! Todo: Need to create a helius account to get all endpoints and tips too. 
 pub const HELIUS_ENDPOINTS: &[Endpoint] = &[
-        Endpoint { url: "https://mainnet.helius-rpc.com", region: Region::UsEast, label: "EWR", rpc_method: "sendTransaction" },
+        Endpoint { url: "https://sender.helius-rpc.com/fast", region: Region::Global, label: "Global", rpc_method: "sendTransaction" },
+        Endpoint { url: "http://ewr-sender.helius-rpc.com/fast",      region: Region::UsEast, label: "Newark", rpc_method: "sendTransaction" },
+        Endpoint { url: "http://slc-sender.helius-rpc.com/fast",      region: Region::UsWest, label: "SLC", rpc_method: "sendTransaction" },
+        Endpoint { url: "http://ams-sender.helius-rpc.com/fast",      region: Region::EuCentral, label: "Amsterdam", rpc_method: "sendTransaction" },
+        Endpoint { url: "http://fra-sender.helius-rpc.com/fast",      region: Region::EuWest, label: "Frankfurt", rpc_method: "sendTransaction" },
+        Endpoint { url: "http://lon-sender.helius-rpc.com/fast",      region: Region::EuWest, label: "London", rpc_method: "sendTransaction" },
+        Endpoint { url: "http://sgp-sender.helius-rpc.com/fast",      region: Region::AsiaSingapore, label: "Singapore", rpc_method: "sendTransaction" },
+        Endpoint { url: "http://tyo-sender.helius-rpc.com/fast",     region: Region::AsiaTokyo, label: "Tokyo", rpc_method: "sendTransaction" },
 ];
 
 
