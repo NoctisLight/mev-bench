@@ -45,9 +45,9 @@ pub fn all_providers() -> Vec<ProviderConfig> {
         ProviderConfig {
             name: "Helius",
             endpoints: HELIUS_ENDPOINTS,
-            auth: AuthMethod::None,
+            auth: AuthMethod::None, 
             min_tip_lamports: 200_000, // Checked
-            supports_bundles: false,
+            supports_bundles: false, // Checked
         },
         ProviderConfig {
             name: "BAM",
