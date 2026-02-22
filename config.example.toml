@@ -1,8 +1,9 @@
+[Keys]
 temporal_api_key=""
 zeroslot_api_key=""
 astralane_api_key=""
 stellium_api_key=""
 helius_api_key=""
 
-[rpc]
+[Rpc]
 url = "https://api.mainnet-beta.solana.com" #Solana basic api or change by whatever you want
